@@ -8,6 +8,7 @@ class Attraction(models.Model):
     description = models.TextField()
     schedule = models.TextField()
     minAge = models.PositiveIntegerField()
+    image = models.ImageField(upload_to='attractions', blank=True, null=True)
     # tourism_spot = models.ManyToManyField(TourismSpot)
 
     def __str__(self):

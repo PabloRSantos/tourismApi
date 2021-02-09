@@ -11,6 +11,7 @@ class TourismSpot(models.Model):
     approved = models.BooleanField(default=False)
     attractions = models.ManyToManyField(Attraction)
     location = models.OneToOneField(Location, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='tourism_spot', blank=True, null=True)
     # location = models.ForeignKey(Location, on_delete=models.CASCADE)
     # comments = models.ManyToManyField(Comments)
     # reviews = models.ManyToManyField(Reviews)

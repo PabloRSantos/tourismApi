@@ -8,9 +8,12 @@ https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/
 """
 
 import os
+from dj_static import Cling
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.settings')
+project_folder = os.path.expanduser('~/tourismapi')
 
-application = get_wsgi_application()
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.development')
+
+application = Cling(get_wsgi_application())

@@ -7,4 +7,4 @@ from api.models.location import Location
 class LocationSerializer(ModelSerializer):
     class Meta:
         model = Location
-        fields = '__all__'
+        exclude = ['id']

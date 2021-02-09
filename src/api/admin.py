@@ -8,7 +8,7 @@ from api.actions.comments import approve_comment, disapprove_comment
 
 
 class AdminComment(admin.ModelAdmin):
-    list_display = '__all__'
+    list_display = ['id', 'user', 'tourism_spot', 'approved', 'created_at']
     actions = [approve_comment, disapprove_comment]
 
 

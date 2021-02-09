@@ -1,3 +1,4 @@
+# from django.db import transaction
 from api.models.tourism_spot import TourismSpot
 from api.serializers.locations import LocationSerializer
 from api.serializers.attractions import AttractionSerializer
@@ -14,12 +15,3 @@ class TourismSpotSerializer(WritableNestedModelSerializer):
         model = TourismSpot
         fields = '__all__'
         # read_only_fields = ['location', 'attractions']
-
-    def update(self, instance,  validated_data):
-        location_id = instance.location.id
-
-        instance = super().update(instance, validated_data)
-
-        Location.objects.filter(id=location_id).delete()
-
-        return instance

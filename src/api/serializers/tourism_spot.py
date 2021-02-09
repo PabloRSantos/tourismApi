@@ -5,4 +5,4 @@ from api.models.tourism_spot import TourismSpot
 class TourismSpotSerializer(ModelSerializer):
     class Meta:
         model = TourismSpot
-        fields = ('id', 'name', 'description')
+        fields = '__all__'
